@@ -1,0 +1,7 @@
+---
+tomcat_version: "9.0.91"
+tomcat_user: "tomcat"
+tomcat_home: "/opt/tomcat/latest"
+java_home: "/usr/lib/jvm/default-java"
+manager_password: "19@priyanshu"
+admin_password: "19@priyanshu"

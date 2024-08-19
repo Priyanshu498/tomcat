@@ -1,0 +1,7 @@
+---
+- name: Test Tomcat Installation
+  hosts: web
+  become: yes
+  roles:
+    - /Users/priyanshu/Apache-tom/tomcat _roles/tomcat
+
