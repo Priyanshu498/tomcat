@@ -1,3 +1,0 @@
-priyanshu@Priyanshus-MacBook-Air ansible_session % ansible-playbook playbook.yml -e "tomcat_version=9.0.91" -i hosts
-
-
