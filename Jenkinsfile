@@ -1,34 +1,19 @@
 pipeline {
     agent any
 
-    environment {
-        ANSIBLE_VERSION = '2.9.6' // Ansible version
-    }
-
     stages {
         stage('Clone Repository') {
             steps {
-                // Clone the repository
-                git branch: 'master', url: 'https://github.com/Priyanshu498/tomcat.git'
+                // Clone the GitHub repository
+                git 'https://github.com/Priyanshu498/tomcat.git'
             }
         }
-
-        stage('Install Ansible') {
-            steps {
-                // Install Ansible (for Ubuntu)
-                sh '''
-                sudo apt update
-                sudo apt install -y ansible
-                '''
-            }
-        }
-
-        stage('Run Ansible Playbook') {
-            steps {
-                // Run the Ansible role to install Tomcat
-                sh '''
-                ansible-playbook -i inventory setup.yml
-                '''
+        
+   
+    stage('Playbook Execution') {
+        // Set the PATH variable to include the location of ansible-playbook
+        withEnv(["PATH+AN=/opt/homebrew/bin"]) {
+            sh "ansible-playbook -i /Users/priyanshu/Apache-tom/assignmet_0n_tool/tomcat/tests/inventory /Users/priyanshu/Apache-tom/assignmet_0n_tool/tomcat/tests/test.yml"
             }
         }
     }
