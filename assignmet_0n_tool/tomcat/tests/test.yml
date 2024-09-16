@@ -1,11 +1,3 @@
-# tests/test.yml
-
-#- name: Test Tomcat role
- # hosts: web
-  #become: yes
-  #roles:
-   # - /Users/priyanshu/Apache-tom/assignmet_0n_tool/tomcat
-# tests/test.yml
 ---
 - name: Test Tomcat role
   hosts: web
