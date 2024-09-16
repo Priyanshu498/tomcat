@@ -10,13 +10,8 @@ pipeline {
             steps {
                 git branch: 'main', url: 'https://github.com/Priyanshu498/tomcat.git'
             }
-        }
-        stage('Install Ansible') {
-            steps {
-                sh 'sudo apt update'
-                sh 'sudo apt install -y ansible'
-            }
-        }
+        }           
+   
         stage('Run Ansible Playbook') {
             steps {
                 sshagent([SSH_CREDENTIALS_ID]) {
