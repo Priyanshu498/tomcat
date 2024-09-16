@@ -3,7 +3,7 @@
   hosts: web
   become: yes
   roles:
-    - role: assignmet_0n_tool/tomcat
+    - role: /home/ubuntu/tomcat/assignmet_0n_tool/tomcat
       tomcat_group: "tomcat"
       tomcat_user: "tomcat"
 
