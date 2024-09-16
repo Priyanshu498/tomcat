@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        SSH_CREDENTIALS_ID = 'ubuntu'  // ID of the SSH credentials
+    }
+
     stages {
         stage('Checkout Code') {
             steps {
@@ -15,7 +19,9 @@ pipeline {
         }
         stage('Run Ansible Playbook') {
             steps {
-                sh 'ansible-playbook -i assignmet_0n_tool/tomcat/tests/inventory assignmet_0n_tool/tomcat/tests/test.yml'
+                sshagent([SSH_CREDENTIALS_ID]) {
+                    sh 'ansible-playbook -i assignmet_0n_tool/tomcat/tests/inventory assignmet_0n_tool/tomcat/tests/test.yml'
+                }
             }
         }
     }
@@ -29,3 +35,4 @@ pipeline {
         }
     }
 }
+
