@@ -21,10 +21,11 @@ pipeline {
     }
 
     post {
-        always {
-            echo 'Tomcat installation complete!'
+        success {
+            echo 'Tomcat installed successfully!'
+        }
+        failure {
+            echo 'Failed to install Tomcat.'
         }
     }
 }
-
-
