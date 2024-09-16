@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Run Ansible Playbook') {
             steps {
-                sh 'ansible-playbook -i assignmet_0n_tool/tomcat/tests/inventory playbook.yml'
+                sh 'ansible-playbook -i assignmet_0n_tool/tomcat/tests/inventory assignmet_0n_tool/tomcat/tests/test.yml'
             }
         }
     }
