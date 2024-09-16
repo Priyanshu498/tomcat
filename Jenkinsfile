@@ -1,15 +1,13 @@
 pipeline {
-    agent {
-        any
-    }
+    agent any
 
     stages {
         stage('Git Checkout') {
             steps {
                 // Checkout the code from your Git repository
                 git url: 'https://github.com/Priyanshu498/tomcat.git'
-                
                
+                
             }
         }
 
@@ -40,5 +38,6 @@ pipeline {
         }
     }
 }
+
 
 
